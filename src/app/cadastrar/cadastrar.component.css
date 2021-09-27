@@ -1,0 +1,12 @@
+
+#img-bg{
+
+    background-image: url(https://blog.imobiliariapremier.com.br/midia/blog/capa/grande/blog_premier_13_12_s_arte.png );
+
+    min-height: 695px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
