@@ -1,20 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+<nav class="navbar navbar-expand-lg navbar-light bg-navbar">
     
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+<button class ="navbar-toggler" type= "button" data-toggle="collapse"
+     data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" 
+     aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
       <ul class="navbar-nav mr-auto d-flex align-items-center">
         <li class="nav-item active">
-         <img src="https://scontent.fgru5-1.fna.fbcdn.net/v/t1.6435-9/c0.9.206.206a/p206x206/180247223_4083596305037882_4057577897820082988_n.jpg?_nc_cat=100&ccb=1-5&_nc_sid=da31f3&_nc_eui2=AeEQyLSBK4JOn8NYSrpcNyFyXcMyMa723sFdwzIxrvbewe74iIkO-P6A1r4tJW24AirXMKSs-6IK7TgQip6zriuN&_nc_ohc=zPeImtXzE30AX_5y8pe&_nc_ht=scontent.fgru5-1.fna&oh=ff70cb3b1488aa8eb45a00c9845ab6ad&oe=617492D9" 
+         <img src={{foto}}
          alt="" width="50px" height="50px" class="img-fluid rounded-circle">
         </li>
         <li class="nav-item pl-3">
-            <p class="m-0 font-weight-bold text-white fs-16">Nome do Usuario</p>
+            <p class="m-0 font-weight-bold text-white fs-16"> Olá , {{nome}}</p>
         </li>
 
-        <li class="nav-item pl-3">
+        <li class="nav-item pl-2">
        <a href="">
         <p class ="text-white fs-16 m-0">
          <i class="fa fa-pencil-square-o " aria-hidden="true"></i></p>
@@ -24,7 +26,7 @@
       </ul>
       <ul class="navbar-nav ml-auto d-flex align-items-center">
         <li class="nav-item pl-3">
-            <a class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            <a (click)= 'sair()' class="m-0 font-weight-bold text-white fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
         </li>
 
     </ul>

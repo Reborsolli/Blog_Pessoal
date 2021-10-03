@@ -12,3 +12,9 @@ ul.social-network li{
     color: white;
     padding: 10px;
 }
+.bg-navbar{
+    background-color: #e7bbae;
+}
+.bg-footer{
+    background-color: #d7a49c;
+}
