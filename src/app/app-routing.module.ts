@@ -14,8 +14,7 @@ const routes: Routes = [
   { path: 'tema', component: TemaComponent  },
   
 ];
-
-@NgModule({
+  @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
