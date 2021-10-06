@@ -17,13 +17,17 @@ export class AuthService {
   ){ }
 
   entrar (userLogin: UserLogin): Observable<UserLogin>  {
-    return this.http.post<UserLogin>('https://blogrenata.herokuapp.com/usuarios/logar', userLogin)
+    return this.http.post<UserLogin>('https://backendblogpessoal.herokuapp.com/usuarios/logar', userLogin)
 
   }
 
   cadastrar( user: User ) : Observable<User> {
-    return this.http.post<User>('https://blogrenata.herokuapp.com/usuarios/cadastrar', user)
+    return this.http.post<User>('https://backendblogpessoal.herokuapp.com/cadastra', user)
 
+  }
+
+  getByIdUser(id: number) : Observable<User>{
+    return this.http.get<User>(`https://backendblogpessoal.herokuapp.com/usuarios/${id}`)
   }
 
   logado(){
