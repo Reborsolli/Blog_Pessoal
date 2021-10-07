@@ -30,4 +30,5 @@ export class TemaService {
    putTema(tema:Tema): Observable<Tema>{
     return this.http.put<Tema>('https://backendblogpessoal.herokuapp.com/tema' , tema, this.token)
   }
+  
 }
