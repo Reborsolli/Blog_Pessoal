@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-import { Tema } from '../Model/Tema';
+import { Tema } from '../model/Tema';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -10,34 +10,33 @@ import { TemaService } from '../service/tema.service';
   styleUrls: ['./tema.component.css']
 })
 export class TemaComponent implements OnInit {
- tema:Tema = new Tema()
- listaTemas: Tema[]
+  tema: Tema = new Tema();
+  listaTemas: Tema[]
 
-  constructor(
-    private router: Router,
-    private temaService : TemaService
-  ) { }
+  constructor(private router: Router, private temaService: TemaService) { }
 
   ngOnInit() {
     if(environment.token == ''){
-      this.router.navigate(['/entrar'])
+      alert("Sua seção expirou.")
+      this.router.navigate(["/entrar"])
     }
-    this.findAllTemas() 
+
+    this.findAllTemas()
   }
-    findAllTemas(){
-      this.temaService.getAllTema().subscribe((resp :Tema[]) => {
-        this.listaTemas = resp 
+
+  findAllTemas(){
+    this.temaService.getAllTema().subscribe((resp: Tema[])=>{
+      this.listaTemas = resp
     })
   }
-  cadastrar (){
-    this.temaService.postTema(this.tema).subscribe((resp : Tema)=>{
-      this.tema= resp
-      alert('Tema cadastrado')
+
+  cadastrar() {
+    this.temaService.postTema(this.tema).subscribe((resp:Tema)=>{
+      this.tema = resp
+      alert("Tema cadastrado!")
       this.findAllTemas()
       this.tema = new Tema()
-    } )
+    })
   }
 
-
 }
-
