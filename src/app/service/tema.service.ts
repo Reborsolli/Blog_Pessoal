@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { Tema } from '../model/Tema';
+import { Tema } from 'src/app/model/Tema';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +23,10 @@ export class TemaService {
     return this.http.get<Tema>(`https://blogrenata.herokuapp.com/tema/${id}`, this.token)
   }
 
+  getByNomeTema(nome: string): Observable <Tema[]>{
+  return this.http.get<Tema[]>(`https://blogrenata.herokuapp.com/tema/nome${nome}`, this.token)
+
+}
   postTema(tema: Tema): Observable<Tema>{
     return this.http.post<Tema>('https://blogrenata.herokuapp.com/tema', tema, this.token)
   }

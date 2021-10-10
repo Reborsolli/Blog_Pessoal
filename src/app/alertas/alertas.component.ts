@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AlertasComponent implements OnInit {
 
   @Input() message: string
-  @Input() type = 'success'
+  @Input() type : string = 'success' 
 
   constructor(public modal: BsModalRef) { }
 
