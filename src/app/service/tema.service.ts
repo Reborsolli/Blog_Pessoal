@@ -1,34 +1,41 @@
-import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
-import { Tema } from '../Model/Tema';
+import { Tema } from 'src/app/model/Tema';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TemaService {
 
-  constructor( private http: HttpClient) { }
-  
-  token ={
-    headers : new HttpHeaders().set('Authorization', environment.token)
+  constructor(private http: HttpClient) { }
+
+  token = {
+    headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
   getAllTema(): Observable<Tema[]>{
-    return this.http.get<Tema[]>('https://backendblogpessoal.herokuapp.com/tema' , this.token)
+    return this.http.get<Tema[]>('https://blogrenata.herokuapp.com/tema', this.token)
   }
-  getByIdTema(id : number): Observable<Tema>{
-    return this.http.get<Tema>(`https://backendblogpessoal.herokuapp.com/tema/${id}` , this.token)
+
+  getByIdTema(id: number): Observable<Tema>{
+    return this.http.get<Tema>(`https://blogrenata.herokuapp.com/tema/${id}`, this.token)
   }
-  postTema(tema:Tema): Observable<Tema>{
-    return this.http.post<Tema>('https://backendblogpessoal.herokuapp.com/tema' , tema, this.token)
+
+  getByNomeTema(nome: string): Observable <Tema[]>{
+  return this.http.get<Tema[]>(`https://blogrenata.herokuapp.com/tema/nome${nome}`, this.token)
+
+}
+  postTema(tema: Tema): Observable<Tema>{
+    return this.http.post<Tema>('https://blogrenata.herokuapp.com/tema', tema, this.token)
   }
-  deleteTema(id:number) {
-    return this.http.delete(`https://backendblogpessoal.herokuapp.com/tema/${id}` , this.token)
+
+  putTema(tema: Tema): Observable<Tema>{
+    return this.http.put<Tema>('https://blogrenata.herokuapp.com/tema', tema, this.token)
   }
-   putTema(tema:Tema): Observable<Tema>{
-    return this.http.put<Tema>('https://backendblogpessoal.herokuapp.com/tema' , tema, this.token)
+
+  deleteTema(id: number) {
+    return this.http.delete(`https://blogrenata.herokuapp.com/tema/${id}`, this.token)
   }
-  
 }

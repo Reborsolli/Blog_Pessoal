@@ -1,20 +1,21 @@
+
 ul.social-network{
-list-style: none;
-padding: 0;
-}
-ul.social-network li{
-    display: inline;
-    margin: 0;
-    padding: 5px;
-}
-.fa{
-    font-size: 35pt;
-    color: white;
-    padding: 10px;
-}
-.bg-navbar{
-    background-color: #e7bbae;
-}
-.bg-footer{
-    background-color: #d7a49c;
-}
+    list-style: none;
+    padding: 0;
+    }
+    ul.social-network li{
+        display: inline;
+        margin: 0;
+        padding: 5px;
+    }
+    .fa{
+        font-size: 35pt;
+        color: white;
+        padding: 10px;
+    }
+    .bg-navbar{
+        background-color:indianred;
+    }
+    .bg-footer{
+        background-color: rgb(189, 81, 81);
+    }

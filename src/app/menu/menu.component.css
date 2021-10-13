@@ -1,10 +1,10 @@
 .fs-16{
- font-size: 16pt;
-}
-a{
-    cursor: pointer;
-}
-   
-.bg-navbar{
-    background-color: rgb(224, 127, 143);
-}
+    font-size: 16pt;
+   }
+   a{
+       cursor: pointer;
+   }
+      
+   .bg-navbar{
+       background-color:indianred;
+   }

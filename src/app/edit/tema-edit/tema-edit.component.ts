@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Tema } from 'src/app/Model/Tema';
+import { Tema } from 'src/app/model/Tema';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -11,35 +11,36 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class TemaEditComponent implements OnInit {
 
-  tema : Tema = new Tema()
+  tema: Tema = new Tema
 
   constructor(
-    private temaService : TemaService,
-    private router : Router,
-    private  route : ActivatedRoute
-  ) { }
+    private temaService: TemaService, 
+    private router: Router, 
+    private route: ActivatedRoute) 
+    { }
 
-  ngOnInit(){
+  ngOnInit() {
     if (environment.token == '') {
-      this.router.navigate(['/entrar'])
+      alert("Sua seção expirou.")
+      this.router.navigate(["/entrar"])
     }
 
     let id = this.route.snapshot.params['id']
     this.findByIdTema(id)
   }
 
-  findByIdTema(id:number){
-    this.temaService.getByIdTema(id).subscribe((resp: Tema) =>{
+  findByIdTema(id: number) {
+    this.temaService.getByIdTema(id).subscribe((resp:Tema)=>{
       this.tema = resp
     })
-
   }
 
   atualizar(){
-    this.temaService.putTema(this.tema).subscribe((resp: Tema ) =>{
+    this.temaService.putTema(this.tema).subscribe((resp: Tema)=>{
       this.tema = resp
-      alert ('Tema atualizado')
+      alert("Tema atualizado!")
       this.router.navigate(['/tema'])
     })
   }
+
 }

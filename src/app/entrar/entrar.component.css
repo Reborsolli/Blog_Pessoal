@@ -1,5 +1,4 @@
 #img-bg{
-
     background-image: url(https://www.gupy.io/hubfs/cultura-organizacional-1.jpeg );
 
     min-height: 695px;
@@ -8,4 +7,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 
+}
+.button{
+    color: #C2185B;
 }
